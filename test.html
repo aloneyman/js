@@ -3,11 +3,7 @@
 
 <head>
     <div id="container">
-        <h1>
-            <li v-for="(item,idex) in items">
-                {{item.message}}--{{idex}}
-            </li>
-        </h1>
+        <button v-on:click="sayHi">click me</button>
     </div>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,11 +14,13 @@
         var app = new Vue({
             el: '#container',
             data: {
-                items: [
-                    { message: 'Foo' },
-                    { message: 'Bar' }
-                ]
-            }
+                message: 'Hello Vue!',
+            },
+            methods: {
+                sayHi: function (event) {
+                    alert(this.message);
+                }
+            },
         });
     </script>
 </head>
