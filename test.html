@@ -2,8 +2,15 @@
 <html lang="en">
 
 <head>
-    <div id="container">
+    <!-- <div id="container">
         <button v-on:click="sayHi">click me</button>
+    </div> -->
+    <div id="container">
+        <input type="radio" name="sex" value="男" v-model="message" checked=true> 男
+        <input type="radio" name="sex" value="女" v-model="message"> 女
+        <p>
+            {{message}}
+        </p>
     </div>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,12 +21,7 @@
         var app = new Vue({
             el: '#container',
             data: {
-                message: 'Hello Vue!',
-            },
-            methods: {
-                sayHi: function (event) {
-                    alert(this.message);
-                }
+                message: '',
             },
         });
     </script>
